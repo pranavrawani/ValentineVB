@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Valentine Gifts ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8fa3;
+            --bg-color: #fff0f3;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text-main: #590d22;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            color: var(--text-main);
+        }
+
+        /* --- FLOATING EMOJI BACKGROUND --- */
+        .floating-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .emoji {
+            position: absolute;
+            bottom: -50px;
+            font-size: 2rem;
+            animation: floatUp linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin: 0;
+            color: var(--primary);
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 1);
+            animation: pulse 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #800f2f;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+            background-color: #20bd5a;
+        }
+
+        /* --- PROJECTS GRID --- */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+        /* --- CARD DESIGN --- */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            text-decoration: none; /* For the wrapping link */
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 77, 109, 0.3);
+        }
+
+        .serial-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .thumbnail img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #800f2f;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .card:hover .view-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; line-height: 1.2; }
+            .subtitle { font-size: 1.2rem; }
+            .container { padding: 15px; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-bg" id="bg-container"></div>
+
+    <header>
+        <h1>Creative Gift for your Valentine</h1>
+        <div class="subtitle">Customise your wish</div>
+        
+        <a href="https://wa.me/918298109914" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp (8298109914)
+        </a>
+    </header>
+
+    <main class="container">
+        
+        <a href="project1.html" class="card">
+            <div class="serial-badge">1</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500" alt="Cute Bear">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Be My Valentine</div>
+                <div class="card-desc">The viral "growing button" prank where they can't say No!</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project2.html" class="card">
+            <div class="serial-badge">2</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500" alt="Matrix">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Digital Surprise</div>
+                <div class="card-desc">Hacker style "Matrix" rain revealing a secret message.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project3.html" class="card">
+            <div class="serial-badge">3</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&w=500" alt="Parallax">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Our Love Story</div>
+                <div class="card-desc">A beautiful scroll-based storybook with parallax effects.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project4.html" class="card">
+            <div class="serial-badge">4</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=500" alt="Lanterns">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Floating Lanterns</div>
+                <div class="card-desc">Tangled-inspired night sky where you make a wish.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project5.html" class="card">
+            <div class="serial-badge">5</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?auto=format&fit=crop&w=500" alt="Cube">
+            </div>
+            <div class="card-content">
+                <div class="card-title">3D Memory Cube</div>
+                <div class="card-desc">An interactive spinning cube holding your best photos.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project6.html" class="card">
+            <div class="serial-badge">6</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500" alt="Swipe">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Soulmate Match</div>
+                <div class="card-desc">A fun "Swipe Right" game where every card is a green flag.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project7.html" class="card">
+            <div class="serial-badge">7</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1630145236746-b089c894234c?auto=format&fit=crop&w=500" alt="Scratch">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Scratch Card</div>
+                <div class="card-desc">Scratch the golden ticket to win a date night or prize.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project8.html" class="card">
+            <div class="serial-badge">8</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?auto=format&fit=crop&w=500" alt="Heartbeat">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Heartbeat Line</div>
+                <div class="card-desc">A glowing medical EKG that beats for them.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project9.html" class="card">
+            <div class="serial-badge">9</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1515549832467-8783363e19b6?auto=format&fit=crop&w=500" alt="Rain">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Rainy Window</div>
+                <div class="card-desc">Wipe the steamy fog off the glass to see a surprise.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project10.html" class="card">
+            <div class="serial-badge">10</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=500" alt="Bottle">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Message in Bottle</div>
+                <div class="card-desc">A floating bottle in the ocean containing a love letter.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project11.html" class="card">
+            <div class="serial-badge">11</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=500" alt="Puzzle">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Puzzle Reveal</div>
+                <div class="card-desc">Pieces fly together to complete your photo.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+        <a href="project12.html" class="card">
+            <div class="serial-badge">12</div>
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500" alt="Journey">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Our Journey</div>
+                <div class="card-desc">Drive a car down the road of your memories.</div>
+                <div class="view-btn">View Gift</div>
+            </div>
+        </a>
+
+    </main>
+
+    <script>
+        // --- FLOATING EMOJI GENERATOR ---
+        const bgContainer = document.getElementById('bg-container');
+        const emojis = ['❤️', '💖', '💌', '🌹', '🧸', '🍫', '✨', '😻'];
+
+        function createEmoji() {
+            const el = document.createElement('div');
+            el.classList.add('emoji');
+            el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Random positioning
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+            
+            // Random animation speed
+            const duration = Math.random() * 5 + 5; // between 5s and 10s
+            el.style.animationDuration = duration + 's';
+
+            bgContainer.appendChild(el);
+
+            // Remove after animation finishes to prevent memory leaks
+            setTimeout(() => {
+                el.remove();
+            }, duration * 1000);
+        }
+
+        // Create a new emoji every 300ms
+        setInterval(createEmoji, 300);
+    </script>
+</body>
+</html>
